@@ -1067,8 +1067,13 @@ p,li,.res-row .rl,.calc-label,.calc-unit,.step-body,.sv-item-text{font-weight:45
       <div class="res-row"><span class="rl">Net per patient/month (after SV fee)</span><span class="rv pos" id="r_net_pt">—</span></div>
       <div class="res-row"><span class="rl">Year 1 — active census by Dec</span><span class="rv" id="r_y1_census">—</span></div>
       <div class="res-row"><span class="rl">Year 1 Part B gross</span><span class="rv pos" id="r_y1_pb_gross">—</span></div>
+      <div class="res-row"><span class="rl">SyncVitals fee Year 1</span><span class="rv neg" id="r_y1_sv_cost">—</span></div>
       <div class="res-row"><span class="rl">Year 1 Part B net</span><span class="rv pos" id="r_y1_pb_net">—</span></div>
+      <div class="res-row"><span class="rl">Year 2 Part B gross</span><span class="rv pos" id="r_y2_pb_gross">—</span></div>
+      <div class="res-row"><span class="rl">SyncVitals fee Year 2</span><span class="rv neg" id="r_y2_sv_cost">—</span></div>
       <div class="res-row"><span class="rl">Year 2 Part B net</span><span class="rv pos" id="r_y2_pb_net">—</span></div>
+      <div class="res-row"><span class="rl">Year 3 Part B gross</span><span class="rv pos" id="r_y3_pb_gross">—</span></div>
+      <div class="res-row"><span class="rl">SyncVitals fee Year 3</span><span class="rv neg" id="r_y3_sv_cost">—</span></div>
       <div class="res-row sub"><span class="rl">Year 3 Part B net</span><span class="rv pos" id="r_y3_pb_net">—</span></div>
     </div>
 
@@ -1233,8 +1238,13 @@ function calc(){
   s('net_pt',       '$'+net_pt.toFixed(0)+'/pt/mo  ('+fmt(rpm_rev)+' gross − $'+sv_pb+' SV)');
   s('y1_census',    num(Math.round(a1))+' patients');
   s('y1_pb_gross',  fmt(b1));
+  s('y1_sv_cost',   '('+fmt(b1-c1)+')');
   s('y1_pb_net',    fmt(c1));
+  s('y2_pb_gross',  fmt(b2));
+  s('y2_sv_cost',   '('+fmt(b2-c2)+')');
   s('y2_pb_net',    fmt(c2));
+  s('y3_pb_gross',  fmt(b3));
+  s('y3_sv_cost',   '('+fmt(b3-c3)+')');
   s('y3_pb_net',    fmt(c3));
 
   // Combined
